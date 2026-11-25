@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="theme-color" content="#f5f7fa">
+  <title>Тренажёр продакта — ASIWI</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="stylesheet" href="./trainer.css">
+  <script type="module" src="./trainer.js"></script>
+</head>
+<body class="trainer">
+  <a class="skip" href="#main">К основному содержанию</a>
+  <header class="wrap trainer-header">
+    <a class="brand" href="/" aria-label="ASIWI · на главную">
+      <span class="brandmark" aria-hidden="true">a</span><span class="brandname">siwi</span>
+    </a>
+    <nav id="navigation" aria-label="Тренажёр" hidden>
+      <a href="#scenarios" data-nav="scenarios">Сценарии</a>
+      <a href="#articles" data-nav="articles">Статьи</a>
+    </nav>
+    <button class="btn lock-button" id="lock" type="button" hidden>Закрыть доступ</button>
+  </header>
+  <main class="wrap trainer-main" id="main" tabindex="-1">
+    <section class="lock-layout" id="gate" aria-labelledby="gate-title">
+      <div class="intro intro-locked">
+        <p class="eyebrow">Личный практикум</p>
+        <h1 id="gate-title">Тренажёр<br>продакта</h1>
+        <p class="intro-text">Выбирай решения в четырёх компаниях и разбирай последствия каждого хода.</p>
+      </div>
+      <form class="surface access-form" id="access">
+        <h2>Вход в тренажёр</h2>
+        <label for="access-key">Ключ доступа</label>
+        <input id="access-key" name="key" type="password" autocomplete="current-password"
+               autocapitalize="off" spellcheck="false" maxlength="80" required
+               aria-describedby="access-message">
+        <button class="btn btn-primary" type="submit">Открыть тренажёр</button>
+        <p class="access-message" id="access-message" role="status" aria-live="polite"></p>
+        <noscript><p>Для открытия материалов включи JavaScript в браузере.</p></noscript>
+      </form>
+    </section>
+    <div id="app" hidden></div>
+  </main>
+  <footer class="wrap trainer-footer">
+    <span>ASIWI</span>
+    <span id="storage-message" aria-live="polite" hidden>Прогресс и заметки хранятся в этом браузере.</span>
+  </footer>
+</body>
+</html>
